@@ -1,0 +1,7 @@
+@dogs.map do |dog|
+  {
+    id: dog.id,
+    name: dog.name,
+    weight: dog.weight,
+  }
+end

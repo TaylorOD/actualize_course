@@ -1,0 +1,31 @@
+# # {
+# #   contacts: @all_contact,
+# # }
+
+# json = []
+# index = 0
+# while index < @all_contact.length
+#   contact = @all_contact[index]
+#   contact_hash = {
+#     first_name: contact.first_name,
+#     last_name: contact.last_name,
+#     email: contact.email,
+#     phone_number: contact.phone_number,
+#   }
+#   json << contact_hash
+#   index = index + 1
+# end
+# return json
+
+json = []
+
+@all_contact.each do |contact|
+  contact_hash = {
+    first_name: contact.first_name,
+    last_name: contact.last_name,
+    email: contact.email,
+    phone_number: contact.phone_number,
+  }
+  json << contact_hash
+end
+return json

@@ -1,0 +1,22 @@
+body {
+  padding: 30px;
+  font-size: 18px;
+  color: SteelBlue;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+h2 {
+    border: 25px solid steelblue;
+    width: 500px;
+    padding: 0px;
+    margin: 2px;
+    
+  }
+
+header {
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+}
