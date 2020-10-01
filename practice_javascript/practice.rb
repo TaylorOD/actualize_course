@@ -383,6 +383,20 @@
 
 # 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
 
+# def a_counter(words)
+#   count = 0
+#   words.each do |word|
+#     word.each_char do |index|
+#       if index == "a"
+#         count += 1
+#       end
+#     end
+#   end
+#   return count
+# end
+
+# p a_counter(["adam", "lucas", "pushover", "aaron", "apple"])
+
 # 11. Write a function that accepts a string and returns whether it’s a palindrome.
 
 # 12. Write a function to generate/print/store the first "n" prime numbers.

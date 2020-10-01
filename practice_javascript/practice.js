@@ -370,25 +370,27 @@
 
 // 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
 
-const aCounter = function (words) {
-  let count = 0
-  let index1 = 0
-  while (index1 < words.length) {
-    let index2 = 0
-    while (index2 < words.length) {
-      if (words[index1][index2] === "a") {
-        count += 1
-      }
-      index2 += 1
-    }
-    index1 += 1
-  }
-  return count
-}
+// const aCounter = function (words) {
+//   let count = 0
+//   let index1 = 0
+//   while (index1 < words.length) {
+//     let index2 = 0
+//     while (index2 < words.length) {
+//       if (words[index1][index2] === "a") {
+//         count += 1
+//       }
+//       index2 += 1
+//     }
+//     index1 += 1
+//   }
+//   return count
+// }
 
-console.log(aCounter(["adam", "lucas", "pushover", "aaron", "apple"]))
+// console.log(aCounter(["adam", "lucas", "pushover", "aaron", "apple"]))
 
 // 11. Write a function that accepts a string and returns whether it’s a palindrome.
+
+
 
 // 12. Write a function to generate/print/store the first "n" prime numbers.
 
