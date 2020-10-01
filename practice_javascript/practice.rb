@@ -215,18 +215,166 @@
 # Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from the first and second array.
 # For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
 
-def add_two_arrays(number1, number2)
-  result = []
+# def add_two_arrays(number1, number2)
+#   result = []
+#   index1 = 0
+#   while index1 < number1.length
+#     index2 = 0
+#     while index2 < number2.length
+#       result << number1[index1] + number2[index2]
+#       index2 += 1
+#     end
+#     index1 += 1
+#   end
+#   return result
+# end
+
+# p add_two_arrays([1, 5, 10], [100, 500, 1000])
+
+# Write a function that takes in an array of numbers and returns its sum.
+
+# def sum_of_array(number)
+#   sum = 0
+#   index1 = 0
+#   while index1 < number.length
+#     sum = sum + number[index1]
+#     index1 += 1
+#   end
+#   return sum
+# end
+
+# p sum_of_array([1, 288, 190])
+
+# Write a function that takes in an array of strings and returns the smallest string.
+
+# def smallest_string(strings)
+#   shortest = strings[0]
+#   index1 = 0
+#   while index1 < strings.length
+#     if strings[index1] < shortest
+#       shortest = strings[index1]
+#     end
+#     index1 += 1
+#   end
+#   return shortest
+# end
+
+# p smallest_string(["taylor", "a", "cookie", "eating", "lakers"])
+
+#  Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
+
+# def reverse_array(numbers)
+#   result = []
+#   index1 = numbers.length - 1
+#   while index1 > 0
+#     result << numbers[index1]
+#     index1 -= 1
+#   end
+#   return result
+# end
+
+# p reverse_array([1, 2, 4, 7, 9, 19, 100])
+
+# 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
+
+# def a_strings(strings)
+#   result = []
+#   index1 = 0
+#   while index1 < strings.length
+#     if strings[index1][0].downcase == "a"
+#       result << strings[index1]
+#     end
+#     index1 += 1
+#   end
+#   return result
+# end
+# p a_strings(["Apple", "Like", "Not", "Adam", "Atom"])
+
+# 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+
+# def string_combiner(strings)
+#   result = ""
+#   index1 = 0
+#   while index1 < strings.length
+#     result << strings[index1]
+#     if index1 == strings.length - 1
+#       result << ""
+#     else
+#       result << ", "
+#     end
+#     index1 += 1
+#   end
+#   return result
+# end
+
+# p string_combiner(["Taylor", "Milk", "Basketball", "Lakers"])
+
+# 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other).
+
+# def product_of_numbers(numbers)
+#   result = 1
+#   index1 = 0
+#   while index1 < numbers.length
+#     result = result * numbers[index1]
+#     index1 += 1
+#   end
+#   return result
+# end
+
+# p product_of_numbers([1, 2, 90, 39])
+
+# 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
+
+# def two_smallest_number(numbers)
+#   smallest = numbers[0]
+#   second_smallest = numbers[1]
+#   index1 = 0
+#   while index1 < numbers.length
+#     if numbers[index1] < smallest && numbers[index1] < second_smallest
+#       smallest = numbers[index1]
+#     elsif numbers[index1] < second_smallest && numbers[index1] > smallest
+#       second_smallest = numbers[index1]
+#     end
+#     index1 += 1
+#   end
+
+#   result = []
+#   result << smallest
+#   result << second_smallest
+#   return result
+# end
+
+# p two_smallest_number([1, 2, 5, 7, 9, 19, 15, 199])
+
+# 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+
+# def zero_counter(numbers)
+#   count = 0
+#   index1 = 0
+#   while index1 < numbers.length
+#     if numbers[index1] == 0
+#       count += 1
+#     end
+#     index1 += 1
+#   end
+
+#   return count
+# end
+
+# p zero_counter([1, 0, 9, 1, 0, 0, 1, 2, 3, 0])
+
+# 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+
+def larger_than_ten(numbers)
+  result = false
   index1 = 0
-  while index1 < number1.length
-    index2 = 0
-    while index2 < number2.length
-      result << number1[index1] + number2[index2]
-      index2 += 1
+  while index1 < numbers.length
+    if numbers[index1] > 10 && result == false
+      result = true
     end
     index1 += 1
   end
   return result
 end
 
-p add_two_arrays([1, 5, 10], [100, 500, 1000])
+p larger_than_ten([1, 19, 20, 24])

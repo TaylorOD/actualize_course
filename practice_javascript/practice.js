@@ -205,18 +205,147 @@
 // Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from the first and second array.
 //  For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
 
-const addTwoArrays = function (number1, number2) {
-  let result = []
-  let index1 = 0
-  while (index1 < number1.length) {
-    let index2 = 0
-    while (index2 < number2.length) {
-      result.push(number1[index1] + number2[index2])
-      index2 += 1
-    }
-    index1 += 1
-  }
-  return result
-}
+// const addTwoArrays = function (number1, number2) {
+//   let result = []
+//   let index1 = 0
+//   while (index1 < number1.length) {
+//     let index2 = 0
+//     while (index2 < number2.length) {
+//       result.push(number1[index1] + number2[index2])
+//       index2 += 1
+//     }
+//     index1 += 1
+//   }
+//   return result
+// }
 
-console.log(addTwoArrays([1, 5, 10], [100, 500, 1000]))
+// console.log(addTwoArrays([1, 5, 10], [100, 500, 1000]))
+
+//  Write a function that takes in an array of numbers and returns its sum.
+
+// const sumOfArray = function (number) {
+//   let sum = 0
+//   let index1 = 0
+//   while (index1 < number[index1]) {
+//     sum = sum + number[index1]
+//     index1 += 1
+//   }
+//   return sum
+// }
+
+// console.log(sumOfArray([1, 288, 190]))
+
+// Write a function that takes in an array of strings and returns the smallest string.
+
+// const smallestString = function (strings) {
+//   let shortest = strings[0]
+//   let index1 = 0
+//   while (index1 < strings.length) {
+//     if (strings[index1] < shortest) {
+//       shortest = strings[index1]
+//     }
+//     index1 += 1
+//   }
+//   return shortest
+// }
+
+// console.log(smallestString(["taylor", "a", "cookie", "eating", "lakers"]))
+
+//  Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
+
+// const reverseArray = function (numbers) {
+//   let result = []
+//   let index1 = numbers.length - 1
+//   while (index1 > 0) {
+//     result.push(numbers[index1])
+//     index1 -= 1
+//   }
+//   return result
+// }
+// console.log(reverseArray([1, 2, 4, 7, 9, 19, 100]))
+
+// 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
+
+// const aStrings = function (strings) {
+//   let result = []
+//   let index1 = 0
+//   while (index1 < strings.length) {
+//     if (strings[index1][0].toLowerCase() === "a") {
+//       result.push(strings[index1])
+//     }
+//     index1 += 1
+//   }
+//   return result
+// }
+// console.log(aStrings(["Apple", "Like", "Not", "Adam", "Atom"]))
+
+// 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+
+// const stringCombiner = function (strings) {
+//   let result = ""
+//   let index1 = 0
+//   while (index1 < strings.length) {
+//     result += strings[index1]
+//     if (index1 === strings.length - 1) {
+//       result += ""
+//     } else {
+//       result += ", "
+//     }
+//     index1 += 1
+//   }
+//   return result
+// }
+
+// console.log(stringCombiner(["Taylor", "Milk", "Basketball", "Lakers"]))
+
+// 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other).
+
+// const productOfNumbers = function (numbers) {
+//   let result = 1
+//   let index1 = 0
+//   while (index1 < numbers.length) {
+//     result = result * numbers[index1]
+//     index1 += 1
+//   }
+//   return result
+
+// }
+
+// console.log(productOfNumbers([1, 2, 90, 39]))
+
+// # 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
+
+// const twoSmallestNumbers = function (numbers) {
+//   let smallest = numbers[0]
+//   let secondSmallest = numbers[1]
+//   let index1 = 0
+//   let result = []
+//   while (index1 < numbers.length) {
+//     if (numbers[index1] < smallest && numbers[index1] < secondSmallest) {
+//       smallest = numbers[index1]
+//     } else if (numbers[index1] < secondSmallest && numbers[index1 > smallest]) {
+//       secondSmallest = numbers[index1]
+//     }
+//     index1 += 1
+//   }
+//   result.push(smallest, secondSmallest)
+//   return result
+// }
+
+// console.log(twoSmallestNumbers([1, 2, 5, 7, 9, 19, 15, 199]))
+
+// # 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+
+// const zeroCounter = function (numbers) {
+//   let count = 0
+//   let index1 = 0
+//   while (index1 < numbers.length) {
+//     if (numbers[index1] === 0) {
+//       count += 1
+//     }
+//     index1 += 1
+//   }
+//   return count
+// }
+
+// console.log(zeroCounter([1, 0, 9, 1, 0, 0, 1, 2, 3, 0]))
