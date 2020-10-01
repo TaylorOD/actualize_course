@@ -46,7 +46,7 @@
 // cityPopulations.sf = 800000; // same as cityPopulations["sf"]
 // console.log(cityPopulations);
 
-// Write a method that prints out every number from 1 to 100. 
+// Write a method that prints out every number from 1 to 100.
 
 // let index = 1
 // while (index <= 10) {
@@ -76,7 +76,7 @@
 
 // howManyFiftyFive(numbers)
 
-// Write a method that accepts an array of strings and returns a new array that has the string "awesomesauce" inserted between every string. 
+// Write a method that accepts an array of strings and returns a new array that has the string "awesomesauce" inserted between every string.
 // For example, if the initial array is ["a", "b", "c", "d", "e"], then the returned array should be ["a", "awesomesauce", "b", "awesomesauce", "c", "awesomesauce", "d", "awesomesauce", "e"].
 
 // Isaiah did this one
@@ -113,26 +113,94 @@
 
 // factorial(5)
 
-// Write a method that accepts two arrays of numbers, and prints the sum of every combination of numbers from first and second array. 
+// Write a method that accepts two arrays of numbers, and prints the sum of every combination of numbers from first and second array.
 // For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should print a list: 101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
 
-let numbers1 = [1, 5, 10]
-let numbers2 = [100, 500, 1000]
+// let numbers1 = [1, 5, 10]
+// let numbers2 = [100, 500, 1000]
 
-const sumOfArrays = function (firstArray, secondArray) {
-  let combinationArray = []
-  let index1 = 0
-  while (index1 < firstArray.length) {
-    let index2 = 0
-    while (index2 < secondArray.length) {
-      combinationArray.push(firstArray[index1] + secondArray[index2])
-      index2++
-    }
-    index1++
+// const sumOfArrays = function (firstArray, secondArray) {
+//   let combinationArray = []
+//   let index1 = 0
+//   while (index1 < firstArray.length) {
+//     let index2 = 0
+//     while (index2 < secondArray.length) {
+//       combinationArray.push(firstArray[index1] + secondArray[index2])
+//       index2++
+//     }
+//     index1++
+//   }
+//   console.log(combinationArray)
+// }
+
+// sumOfArrays(numbers1, numbers2)
+
+//  Write a function that accepts an array of strings and returns a new array containing every other string from the original array.
+//  For example, if the input is ["a", "b", "c", "d", "e", "f"], the output should be ["a", "c", "e"].
+
+// let strings = ["a", "b", "c", "d", "e", "f"]
+
+// const everyOther = function (string) {
+//   let result = []
+//   let index = 0
+//   while (index < string.length) {
+//     if (index % 2 === 0) {
+//       result.push(string[index])
+//     }
+//     index += 1
+//   }
+//   return result
+// }
+
+// console.log(everyOther(strings))
+
+//  Write a method that accepts one argument - an array of numbers. The method should return the greatest number.
+//  For example, if the input is [5, 4, 8, 1, 2], the output should be 8.
+
+// const greatestNumber = function (number) {
+//   let index = 0
+//   let max = number[0]
+//   while (index < number.length) {
+//     if (number[index] > max) {
+//       max = number[index]
+//     }
+//     index++
+//   }
+//   return max
+// }
+
+// console.log(greatestNumber([5, 4, 8, 1, 2]))
+
+// Write a method that accepts a number and returns its factorial.
+// For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
+
+// const factorial = function (number) {
+//   let result = 1
+//   let currentNumber = number
+//   while (currentNumber > 0) {
+//     result = result * currentNumber
+//     currentNumber--
+//   }
+//   return result
+// }
+// console.log(factorial(5))
+
+//  Write a method that accepts one argument - an array of numbers that are in ascending order.
+//  The method that returns a new array with the same values in descending order.
+//  However, do not use the "reverse" method built into Ruby.
+
+const reserseArray = function (number) {
+  let result = []
+  let index = number.length - 1
+  while (index >= 0) {
+    result.push(number[index])
+    index -= 1
   }
-  console.log(combinationArray)
+
+  return result
 }
 
+console.log(reserseArray([1, 3, 5, 6, 100]))
 
-
-sumOfArrays(numbers1, numbers2)
+// Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from the first and second array.
+//  For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
