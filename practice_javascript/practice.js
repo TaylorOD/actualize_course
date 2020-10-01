@@ -349,3 +349,47 @@
 // }
 
 // console.log(zeroCounter([1, 0, 9, 1, 0, 0, 1, 2, 3, 0]))
+
+// # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+
+// const largerThanTen = function (numbers) {
+//   let result = true
+//   let index1 = 0
+//   while (index1 < numbers.length) {
+//     if (numbers[index1] > 10 && result === true) {
+//       result = true
+//     } else {
+//       result = false
+//     }
+//     index1 += 1
+//   }
+//   return result
+// }
+
+// console.log(largerThanTen([10, 19, 20, 24]))
+
+// 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
+
+const aCounter = function (words) {
+  let count = 0
+  let index1 = 0
+  while (index1 < words.length) {
+    let index2 = 0
+    while (index2 < words.length) {
+      if (words[index1][index2] === "a") {
+        count += 1
+      }
+      index2 += 1
+    }
+    index1 += 1
+  }
+  return count
+}
+
+console.log(aCounter(["adam", "lucas", "pushover", "aaron", "apple"]))
+
+// 11. Write a function that accepts a string and returns whether it’s a palindrome.
+
+// 12. Write a function to generate/print/store the first "n" prime numbers.
+
+// 13. Given a tic-tac-toe board (matrix of 3 x 3), write a function that can check to see whether X or O won.
