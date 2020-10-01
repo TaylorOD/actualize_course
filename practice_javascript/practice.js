@@ -189,18 +189,34 @@
 //  The method that returns a new array with the same values in descending order.
 //  However, do not use the "reverse" method built into Ruby.
 
-const reserseArray = function (number) {
-  let result = []
-  let index = number.length - 1
-  while (index >= 0) {
-    result.push(number[index])
-    index -= 1
-  }
+// const reserseArray = function (number) {
+//   let result = []
+//   let index = number.length - 1
+//   while (index >= 0) {
+//     result.push(number[index])
+//     index -= 1
+//   }
 
-  return result
-}
+//   return result
+// }
 
-console.log(reserseArray([1, 3, 5, 6, 100]))
+// console.log(reserseArray([1, 3, 5, 6, 100]))
 
 // Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from the first and second array.
 //  For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
+
+const addTwoArrays = function (number1, number2) {
+  let result = []
+  let index1 = 0
+  while (index1 < number1.length) {
+    let index2 = 0
+    while (index2 < number2.length) {
+      result.push(number1[index1] + number2[index2])
+      index2 += 1
+    }
+    index1 += 1
+  }
+  return result
+}
+
+console.log(addTwoArrays([1, 5, 10], [100, 500, 1000]))
