@@ -10,6 +10,8 @@ var app = new Vue({
       product: 0,
       showExtraInfo: true,
       dimExtraInfo: true,
+      numbers: ["1", "2", "4"],
+      newNumber: "",
 
     };
   },
@@ -26,5 +28,8 @@ var app = new Vue({
     toggleDimExtraInfo: function () {
       this.dimExtraInfo = !this.dimExtraInfo;
     },
+    addNewNumber: function () {
+      this.numbers.push(this.newNumber)
+    }
   }
 });

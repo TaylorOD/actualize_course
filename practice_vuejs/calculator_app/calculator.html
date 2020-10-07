@@ -25,6 +25,16 @@
 
     <p>The sum is: {{ sum }}</p>
     <p>The sum is: {{ product }}</p>
+
+    <div>
+      <h4>Add a Number:</h4>
+      Number: <input type="text" v-model="newNumber">
+      <button v-on:click="addNewNumber()">Add Number</button>
+
+    </div>
+    <div v-for="number in numbers">
+      <p>{{ number }}</p>
+    </div>
     <div>
       <button v-on:click="toggleExtraInfo()"> Show Lorem </button>
       <p v-if="showExtraInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, soluta.</p>
