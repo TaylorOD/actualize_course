@@ -390,7 +390,12 @@
 
 // 11. Write a function that accepts a string and returns whether it’s a palindrome.
 
+const palindromeChecker = function (word) {
+  let palindrome = word
+  let palindrome = 
+}
 
+console.log(palindromeChecker("racecar"))
 
 // 12. Write a function to generate/print/store the first "n" prime numbers.
 

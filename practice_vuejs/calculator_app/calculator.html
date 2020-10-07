@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js Intro</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="calculator.js" defer></script>
+  <style>
+    .disabled {
+      color: lightgray;
+      transition: color 1s ease
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <div>1st number: <input type="text" v-model="firstNumber"></div>
+    <div>2nd number: <input type="text" v-model="secondNumber"></div>
+    <div>3rd number: <input type="text" v-model="thirdNumber"></div>
+    <div><button v-on:click="calculateSum">Compute sum</button></div>
+    <div><button v-on:click="calculateProduct">Compute product</button></div>
+
+    <p>The sum is: {{ sum }}</p>
+    <p>The sum is: {{ product }}</p>
+    <div>
+      <button v-on:click="toggleExtraInfo()"> Show Lorem </button>
+      <p v-if="showExtraInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, soluta.</p>
+    </div>
+    <div>
+      <button v-on:click="toggleDimExtraInfo()"> Dim Lorem </button>
+      <p v-bind:class="{disabled: dimExtraInfo}">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, non.
+      </p>
+
+    </div>
+  </div>
+</body>
+
+</html>
