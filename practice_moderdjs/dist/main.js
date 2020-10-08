@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "dist";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("let tinyColor = __webpack_require__(/*! tinycolor2 */ \"./node_modules/tinycolor2/tinycolor.js\")\nlet date = __webpack_require__(/*! date.js */ \"./node_modules/date.js/index.js\")\n\nconsole.log(\"Hello from JS!\")\n\nconsole.log(tinycolor.fromRatio)\n\n//# sourceURL=webpack:///./index.js?");
+eval("var tinyColor = __webpack_require__(/*! tinycolor2 */ \"./node_modules/tinycolor2/tinycolor.js\");\n\nvar date = __webpack_require__(/*! date.js */ \"./node_modules/date.js/index.js\");\n\nconsole.log(\"Hello from JS!\");\nconsole.log(tinycolor.fromRatio);\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
