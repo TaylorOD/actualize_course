@@ -10,7 +10,6 @@
       <input type="text" v-model="newProductImageURL" />
       Price:
       <input type="text" v-model="newProductPrice" />
-
       <button v-on:click="createProduct()">Create</button>
     </div>
     <h1>All Products</h1>
@@ -18,7 +17,25 @@
       <h2>Name: {{ product.name }}</h2>
       <img v-bind:src="product.image_url" v-bind:alt="product.name" />
       <p>Description: {{ product.description }}</p>
+      <button v-on:click="showProduct(product)">More Info</button>
     </div>
+
+
+
+     <dialog id="product-details">
+        <form method="dialog">
+          <h1>Product info</h1>
+          <p>Name: <input type="text" v-model="currentProduct.name"></p>
+          <p>Description: <textarea v-model="currentProduct.description"></textarea></p>
+          <p>Price: {{ currentProduct.tax }}</p>
+          <p>Tax: {{ currentProduct.tax }}</p>
+          <p>Total: {{ currentProduct.total }}</p>
+          <button v-on:click="updateProduct(currentProduct)">Update</button>
+          <button v-on:click="destroyProduct(currentProduct)">Destroy</button>
+          <button>Close</button>
+        </form>
+    </dialog>
+
   </div>
 </template>
 
@@ -39,6 +56,7 @@ export default {
       newProductDescription: "",
       newProductImageURL: "",
       newProductPrice: "",
+      currentProduct: {},
     }
   },
   created: function() {
@@ -52,7 +70,6 @@ export default {
       })
     },
     createProduct: function() {
-      console.log("Create the product...")
       var params = {
         name: this.newProductName,
         description: this.newProductDescription,
@@ -67,9 +84,35 @@ export default {
         })
         .catch(error => console.log(error.response))
       ;(this.newProductName = ""),
-        (this.newProductDescription = ""),
-        (this.newProductImageURL = ""),
-        (this.newProductPrice = "")
+      (this.newProductDescription = ""),
+      (this.newProductImageURL = ""),
+      (this.newProductPrice = "")
+    },
+    showProduct: function (product) {
+      this.currentProduct = product
+      document.querySelector("#product-details").showModal();
+    },
+    updateProduct: function (product) {
+      var params = {
+        name: product.name,
+        description: product.description,
+      }
+      axios
+        .patch(`/api/products/${product.id}`, params)
+        .then(response => {
+          console.log("Success", response.data)
+        })
+        .catch(error => console.log(error.response))
+    },
+    destroyProduct: function (product) {
+      axios
+        .delete(`/api/products/${product.id}`)
+        .then(response => {
+          console.log("Success - product destroyed", response.data)
+        })
+        .catch(error => console.log(error.response))
+        // remove this product from this.products / you dont have to reload page
+         
     },
   },
 }
