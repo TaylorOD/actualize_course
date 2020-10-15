@@ -112,7 +112,8 @@ export default {
         })
         .catch(error => console.log(error.response))
         // remove this product from this.products / you dont have to reload page
-         
+      var index = this.products.indexOf(product);
+      this.products.splice(index, 1);
     },
   },
 }
