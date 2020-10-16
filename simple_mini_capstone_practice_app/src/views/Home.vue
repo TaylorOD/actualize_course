@@ -15,12 +15,17 @@
         <p>Price: {{ product.total }}</p>
 
         <button v-on:click="showProduct(product)">More Info</button>
+
     </div>
       <dialog id="product-details">
         <form method="dialog">
           <h1>Product Info</h1>
-          <p>Description: {{ currentProduct.description }}</p>
-          <p>Price: {{ currentProduct.total }}</p>
+            Name: <input type="text" v-model="currentProduct.name">
+            Description: <input type="text" v-model="currentProduct.description">
+            Image URL: <input type="text" v-model="currentProduct.image_url">
+            Price: <input type="text" v-model="currentProduct.price">
+          <button v-on:click="destroyProduct(currentProduct)">Destroy Product</button>
+          <button v-on:click="updateProduct(currentProduct)">Update Product</button>
           <button>Close</button>
         </form>
       </dialog>
@@ -80,6 +85,32 @@ export default {
     showProduct: function(product) {
       this.currentProduct = product
       document.querySelector("#product-details").showModal()
+    },
+    updateProduct: function(product) {
+      var params = {
+        name: product.name,
+        description: product.description,
+        image_url: product.image_url,
+        price: product.price,
+      }
+      axios
+        .patch(`api/products/${product.id}`, params)
+        .then(response => {
+          console.log("Product updated", response)
+          this.currentProduct = {}
+        })
+        .catch(error => {
+          console.log("products update error", error.response)
+        })
+    },
+    destroyProduct: function(product) {
+      axios
+        .delete(`api/products/${product.id}`)
+        .then(response => {
+          console.log("Product destroy", response)
+          var index = this.products.indexOf(product)
+          this.products.splice(index, 1)
+        })
     },
   },
 }
