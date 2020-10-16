@@ -3,7 +3,7 @@
     <h1> All Products!</h1>
     <div v-for="product in products">
         <h1>{{ product.name }}</h1>
-        <img v-bind:src="product.image_url" v-bind-alt="product.name">
+        <img v-bind:src="product.image_url" v-bind:alt="product.name">
         <p>Description: {{ product.description }}</p>
         <p>Price: {{ product.total }}</p>
 
