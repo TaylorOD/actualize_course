@@ -4,6 +4,8 @@
     <div v-for="post in posts">
       <h2>Title: {{ post.title }}</h2>
       <img v-bind:src="post.image" v-bind:alt="post.name" />
+      <h2>Body: {{ post.body }}</h2>
+
     </div>
   </div>
 </template>
