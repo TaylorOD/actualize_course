@@ -20,8 +20,6 @@
       <button v-on:click="showProduct(product)">More Info</button>
     </div>
 
-
-
      <dialog id="product-details">
         <form method="dialog">
           <h1>Product info</h1>
