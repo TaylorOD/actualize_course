@@ -5,7 +5,9 @@
       <img v-bind:src="post.image" v-bind:alt="post.name" />
       <h2>Body: {{ post.body }}</h2>
       <router-link v-bind:to="`/posts/${post.id}/edit`"> Edit post </router-link> |
-      <router-link to="/posts"> Back to all posts </router-link>
+      <router-link to="/posts"> Back to all posts </router-link> |
+      <button v-on:click="destroyPost(post)">Destroy post</button>
+
     </div>
   </div>
 </template>
@@ -25,6 +27,13 @@ export default {
       this.post = response.data;
     });
   },
-  methods: {},
+  methods: {
+    destroyPost: function(post) {
+      axios.delete("/api/posts/" + post.id).then(response => {
+        console.log("post destroy", response);
+      });
+      this.$router.push("/posts");
+    },
+  },
 };
 </script>
