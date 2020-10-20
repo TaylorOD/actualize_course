@@ -15,7 +15,7 @@
     <h1>All Products</h1>
     <div v-for="product in products">
       <h2>Name: {{ product.name }}</h2>
-      <img v-bind:src="product.image_url" v-bind:alt="product.name" />
+      <img v-bind:src="product.image_url[0]" v-bind:alt="product.name" />
       <p>Description: {{ product.description }}</p>
       <button v-on:click="showProduct(product)">More Info</button>
     </div>
