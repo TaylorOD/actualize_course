@@ -1,20 +1,25 @@
 <template>
   <div class="postsindex">
     <h1>All Posts</h1>
-    <div>
-      Search posts: <input type="text" v-model="searchFilter" list="post-titles">
-      <datalist id="post-titles">
-        <option v-for="post in posts">{{ post.title }}</option>
-      </datalist>
-    </div>
-      <div v-for="post in filterBy(posts, searchFilter, 'title')" class="col mb-4">
-      <h2>Name: {{ post.title }}</h2>
-      <img v-bind:src="post.image" v-bind:alt="post.name" />
-      <h2>Body: {{ post.body }}</h2>
-      <router-link v-bind:to="`/posts/${post.id}`">More details</router-link>
+    <div class="row row-cols-1 row-cols-md-4">
+      <div v-for="post in posts" class="col mb-4">
+        <div class="card">
+          <img v-bind:src="post.image" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">
+              {{ post.body }}
+            </p>
+            <p>
+              <a v-bind:href="`/posts/${post.id}`">more info</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from "axios";

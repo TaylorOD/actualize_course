@@ -1,13 +1,21 @@
 <template>
   <div class="posts-show">
-    <h1>Blog post:</h1>
-      <h2>Title: {{ post.title }}</h2>
-      <img v-bind:src="post.image" v-bind:alt="post.name" />
-      <h2>Body: {{ post.body }}</h2>
-      <router-link v-bind:to="`/posts/${post.id}/edit`">Edit post</router-link> |
-      <router-link to="/posts">Back to all posts</router-link> |
-      <button v-on:click="destroyPost(post)">Destroy post</button>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img v-bind:src="post.image_url" class="card-img" alt="">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Title: {{ post.title }}</h5>
+            <img v-bind:src="post.image" class="card-img-top" alt="">            
+            <p class="card-text">Body: {{ post.body }}</p>
+            <a class="btn btn-primary btn-block" v-bind:href="`/posts/${post.id}/edit`">Edit post</a>
 
+            <button class="btn btn-primary btn-block" v-on:click="destroyPost(post)">Destroy post</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
