@@ -1,8 +1,12 @@
 <template>
   <div class="postsindex">
     <h1>All Posts</h1>
-      Search posts: <input type="text" v-model="searchFilter">
-      <!-- <div v-for="post in posts" class="col mb-4"> -->
+    <div>
+      Search posts: <input type="text" v-model="searchFilter" list="post-titles">
+      <datalist id="post-titles">
+        <option v-for="post in posts">{{ post.title }}</option>
+      </datalist>
+    </div>
       <div v-for="post in filterBy(posts, searchFilter, 'title')" class="col mb-4">
       <h2>Name: {{ post.title }}</h2>
       <img v-bind:src="post.image" v-bind:alt="post.name" />
