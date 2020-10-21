@@ -6,15 +6,15 @@
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
       <div class="form-group">
-        <label>title:</label> 
+        <label>Title:</label> 
         <input type="text" class="form-control" v-model="post.title">
       </div>
       <div class="form-group">
-        <label>body:</label> 
+        <label>Body:</label> 
         <input type="text" class="form-control" v-model="post.body">
       </div>
       <div class="form-group">
-        <label>image:</label> 
+        <label>Image:</label> 
         <input type="text" class="form-control" v-model="post.image">
       </div>
       <input type="submit" class="btn btn-primary" value="Submit">

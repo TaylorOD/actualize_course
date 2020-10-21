@@ -1,21 +1,40 @@
 <template>
   <div class="home">
-    <h1>New Post</h1>
+    <!-- <h1>New Post</h1> -->
     <div>
-      Title: <input type="text" v-model="newPostTitle">
-      Body: <input type="text" v-model="newPostBody">
-      Image: <input type="text" v-model="newPostImage">
-      <button v-on:click="createPost()">Create</button>
+      <!-- Title: <input type="text" v-model="newPostTitle"> -->
+      <!-- Body: <input type="text" v-model="newPostBody"> -->
+      <!-- Image: <input type="text" v-model="newPostImage"> -->
+      <!-- <button v-on:click="createPost()">Create</button> -->
     </div>
-    <h1>All posts</h1>
-    <div v-for="post in posts">
+    <h1>All Public Posts</h1>
+    <div class="row row-cols-1 row-cols-md-4">
+      <div v-for="post in posts" class="col mb-4">
+        <div class="card">
+          <img v-bind:src="post.image" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">
+              {{ post.body }}
+            </p>
+            <p>
+              <a v-bind:href="`/posts/${post.id}`">more info</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <div v-for="post in posts">
       <h2>Title: {{ post.title }}</h2>
       <img v-bind:src="post.image" v-bind:alt="post.title">
       <p>Body: {{ post.body }}</p>
       <button v-on:click="showPost(post)">More info</button>
-    </div>
+    </div> -->
 
-    <dialog id="post-details">
+    
+
+    <!-- <dialog id="post-details">
       <form method="dialog">
         <h1>Post info</h1>
         <p>Title: <input type="text" v-model="currentPost.title"></p>
@@ -25,7 +44,7 @@
         <button v-if="currentPost.is_owner" v-on:click="destroyPost(currentPost)">Destroy</button>
         <button>Close</button>
       </form>
-    </dialog>
+    </dialog> -->
 
   </div>
 </template>
@@ -38,6 +57,7 @@ img {
 
 <script>
 import axios from "axios";
+
 export default {
   name: "Home",
   data: function () {

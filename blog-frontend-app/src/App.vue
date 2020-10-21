@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/posts">All posts</a>
+            <a class="nav-link" href="/posts">Your posts</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/posts/new">New post</a>

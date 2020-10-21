@@ -1,6 +1,6 @@
 <template>
   <div class="postsindex">
-    <h1>All Posts</h1>
+    <h1>All My Posts</h1>
     <div class="row row-cols-1 row-cols-md-4">
       <div v-for="post in posts" class="col mb-4">
         <div class="card">
