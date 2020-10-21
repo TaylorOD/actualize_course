@@ -41,6 +41,11 @@
 
 <script>
 export default {
+  data: function () {
+    return {
+      flashMessage: "",
+    };
+  },
   methods: {
     isLoggedIn: function () {
       return localStorage.getItem("jwt");
