@@ -8,6 +8,8 @@
       <div class="form-group">
         <label>Name:</label> 
         <input type="text" class="form-control" v-model="name">
+        <small>{{ 20 - name.length }} characters remaining</small>
+        
       </div>
       <div class="form-group">
         <label>Email:</label>
