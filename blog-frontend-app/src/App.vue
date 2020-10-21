@@ -15,16 +15,17 @@
           <li class="nav-item">
             <a class="nav-link" href="/posts/new">New post</a>
           </li>
-          <li class="nav-item">
+          <li v-if="!isLoggedIn()" class="nav-item">
             <a class="nav-link" href="/signup">Signup</a>
           </li>
-          <li class="nav-item">
+          <li v-if="!isLoggedIn()" class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
-          <li class="nav-item">
+          <li v-if="isLoggedIn()" class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
         </ul>
+
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -32,14 +33,30 @@
       </div>
     </nav>
     <div class="container">
+      <div class="alert alert-success" v-if="flashMessage" v-on:click="flashMessage = ''">{{ flashMessage }}</div>
       <router-view/>
     </div>
   </div>
 </template>
 
 <style>
-  body {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    background-image: url("./assets/moroccan_flower.png");
-  };
+body {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  background-image: url("./assets/moroccan_flower.png");
+}
+</style>
+
+<script>
+export default {
+  data: function () {
+    return {
+      flashMessage: "",
+    };
+  },
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+  },
+};
 </script>
