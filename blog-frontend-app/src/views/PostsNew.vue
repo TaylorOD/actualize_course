@@ -1,6 +1,8 @@
 <template>
   <div class="posts-new">
     <form v-on:submit.prevent="submit()">
+    <img v-if="status" v-bind:src="`https://http.cat/${status}`" alt="">
+
       <h1>Create New Post</h1>
       <div class="form-group">
         <label>Title:</label> 
@@ -28,6 +30,7 @@ export default {
       title: "",
       body: "",
       image: "",
+      status: "",
     };
   },
   methods: {
@@ -44,6 +47,7 @@ export default {
         })
         .catch(error => {
           this.errors = error.response.data.errors;
+          this.status = error.response.status;
         });
     }
   }
