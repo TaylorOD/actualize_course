@@ -1,6 +1,11 @@
 <template>
   <div class="note-selectors">
-    <NoteSelector v-for="note in notes" v-bind:key="note.id" v-bind:note="note"/>
+    <NoteSelector 
+    v-for="note in notes" 
+    v-bind:key="note.id" 
+    v-bind:note="note"
+    v-bind:selectedNoteId="selectedNoteId"
+    />
   </div>
 </template>
 
@@ -19,6 +24,7 @@ export default {
         { id: 3, body: "This is a third test", timestamp: Date.now() },
         { id: 4, body: "This is a fourth test", timestamp: Date.now() }
       ],
+      selectedNoteId: 1
     }
   },
 }
