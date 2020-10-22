@@ -2,16 +2,16 @@
   <div class="postsindex">
     <h1>All My Posts</h1>
     <div class="row row-cols-1 row-cols-md-4">
-      <div v-for="post in posts" class="col mb-4">
+      <div v-if="currentPost.is_owner" v-for="currentPost in currentPost" class="col mb-4">
         <div class="card">
-          <img v-bind:src="post.image" class="card-img-top" alt="">
+          <img v-bind:src="currentPost.image" class="card-img-top" alt="">
           <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
+            <h5 class="card-title">{{ currentPost.title }}</h5>
             <p class="card-text">
-              {{ post.body }}
+              {{ currentPost.body }}
             </p>
             <p>
-              <a v-bind:href="`/posts/${post.id}`">more info</a>
+              <a v-bind:href="`/posts/${currentPost.id}`">more info</a>
             </p>
           </div>
         </div>
@@ -30,13 +30,13 @@ export default {
   data: function() {
     return {
       searchFilter: "",
-      posts: [],
+      currentPost: []
     };
   },
   created: function() {
     axios.get("/api/posts").then(response => {
       console.log("posts index", response);
-      this.posts = response.data;
+      this.currentPost = response.data;
     });
   },
   methods: {},

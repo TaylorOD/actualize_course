@@ -1,11 +1,7 @@
 <template>
   <div class="home">
-    <!-- <h1>New Post</h1> -->
     <div>
-      <!-- Title: <input type="text" v-model="newPostTitle"> -->
-      <!-- Body: <input type="text" v-model="newPostBody"> -->
-      <!-- Image: <input type="text" v-model="newPostImage"> -->
-      <!-- <button v-on:click="createPost()">Create</button> -->
+
     </div>
     <h1>All Public Posts</h1>
     <div class="row row-cols-1 row-cols-md-4">
@@ -24,28 +20,6 @@
         </div>
       </div>
     </div>
-  </div>
-    <!-- <div v-for="post in posts">
-      <h2>Title: {{ post.title }}</h2>
-      <img v-bind:src="post.image" v-bind:alt="post.title">
-      <p>Body: {{ post.body }}</p>
-      <button v-on:click="showPost(post)">More info</button>
-    </div> -->
-
-    
-
-    <!-- <dialog id="post-details">
-      <form method="dialog">
-        <h1>Post info</h1>
-        <p>Title: <input type="text" v-model="currentPost.title"></p>
-        <p>Body: <input type="text" v-model="currentPost.body"></p>
-        <p>Image: <input type="text" v-model="currentPost.image"></p>
-        <button v-if="currentPost.is_owner" v-on:click="updatePost(currentPost)">Update</button>
-        <button v-if="currentPost.is_owner" v-on:click="destroyPost(currentPost)">Destroy</button>
-        <button>Close</button>
-      </form>
-    </dialog> -->
-
   </div>
 </template>
 
@@ -116,7 +90,7 @@ export default {
     destroyPost: function (post) {
       axios.delete("/api/posts/" + post.id).then((response) => {
         console.log("Success", response.data);
-        // Remove this post from this.posts
+
         var index = this.posts.indexOf(post);
         this.posts.splice(index, 1);
       });
