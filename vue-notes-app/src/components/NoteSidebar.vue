@@ -13,6 +13,7 @@
 
 <script>
 import NoteSelector from "./NoteSelector";
+
 export default {
   components: {
     NoteSelector,

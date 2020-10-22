@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <vue-simple-spinner></vue-simple-spinner>
+
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +9,10 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import simplespinner from "./vue-simple-spinner.js";
+</script>
 
 <style>
 #app {

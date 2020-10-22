@@ -2,6 +2,8 @@
   <div class="home">
     <h1> All Products!</h1>
     <h1>New Product:</h1>
+    <vue-simple-spinner size="medium" />
+
     Name: <input type="text" v-model="newProductName">
     Description: <input type="text" v-model="newProductDescription">
     Image URL: <input type="text" v-model="newProductImage">
