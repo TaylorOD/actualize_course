@@ -17,10 +17,14 @@
 export default {
   data: function () {
     return {
-      message: "Look at me!"
+      message: "Look at me!",
+      places: [],
+      
     }
   },
-  created: function () {},
+  created: function () {
+    this.indexPlaces()
+  },
   mounted: function () {
     mapboxgl.accessToken = process.env.VUE_APP_MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
@@ -29,8 +33,23 @@ export default {
       center: [-74.5, 40], // starting position [lng, lat]
       zoom: 9 // starting zoom
     });
+    var marker = new mapboxgl.Marker()
+      .setLngLat([30.5, 50.5])
+      .setPopup(popup)
+      .addTo(map);
+    var popup = new mapboxgl.Popup({ offset: 25 })
+      .setText("Construction on the Washington Monument began in 1848.");
+
   },
-  methods: {}
+  
+  methods: {
+    indexPlaces: function () {
+      this.places = [
+        {},
+        {},
+      ]
+    },
+  },
 
 }
 </script>
