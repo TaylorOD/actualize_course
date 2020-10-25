@@ -7,7 +7,7 @@
           <section class="tiles">            
             <article class="style1" v-for="product in products">
               <span class="image">
-                <img src="images/pic01.jpg" alt="product.name" />
+                <img v-bind:src="product.primary_image" v-bind:alt="product.name" />
               </span>
               <a v-on:click="showProduct(product)">
                 <h3>{{ product.name }}</h3>
@@ -19,10 +19,6 @@
           </section>
           
       </div>
-
-    <div v-for="product in products">
-      <img v-bind:src="product.image_url" v-bind:alt="product.name" />
-    </div>
 
      <dialog id="product-details">
         <form method="dialog">
@@ -64,6 +60,12 @@ export default {
       axios.get("/api/products").then(response => {
         console.log("All Products:", response.data)
         this.products = response.data
+      })
+    },
+    indexImages: function() {
+      axios.get("/api/products").then(response => {
+        console.log("All Products:", response.data)
+        this.products.images = response.data
       })
     },
     createProduct: function() {
