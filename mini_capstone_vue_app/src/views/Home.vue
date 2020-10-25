@@ -1,43 +1,27 @@
 <template>
   <div class="home" id="main">
         <div class="inner">
-         
-          <section class="tiles">
+          
+          <h2>All Products</h2>
+          
+          <section class="tiles">            
             <article class="style1" v-for="product in products">
               <span class="image">
-                <img src="images/pic01.jpg" alt="" />
+                <img src="images/pic01.jpg" alt="product.name" />
               </span>
-              <a href="generic.html">
-                <h2>{{ product.name }}</h2>
+              <a v-on:click="showProduct(product)">
+                <h3>{{ product.name }}</h3>
                 <div class="content">
                   <p>{{ product.description }}</p>
                 </div>
               </a>
             </article>
-            
           </section>
+          
       </div>
 
-    <h1>Create Product</h1>
-    <div>
-      Name:
-      <input type="text" v-model="newProductName" />
-      Description:
-      <input type="text" v-model="newProductDescription" />
-      Image URL:
-      <input type="text" v-model="newProductImageURL" />
-      Price:
-      <input type="text" v-model="newProductPrice" />
-      Supplier:
-      <input type="text" v-model="newProductSupplier" />
-      <button v-on:click="createProduct()">Create</button>
-    </div>
-    <h1>All Products</h1>
     <div v-for="product in products">
-      <h2>Name: {{ product.name }}</h2>
       <img v-bind:src="product.image_url" v-bind:alt="product.name" />
-      <p>Description: {{ product.description }}</p>
-      <button v-on:click="showProduct(product)">More Info</button>
     </div>
 
      <dialog id="product-details">
@@ -45,9 +29,7 @@
           <h1>Product info</h1>
           <p>Name: <input type="text" v-model="currentProduct.name"></p>
           <p>Description: <textarea v-model="currentProduct.description"></textarea></p>
-          <p>Price: {{ currentProduct.tax }}</p>
-          <p>Tax: {{ currentProduct.tax }}</p>
-          <p>Total: {{ currentProduct.total }}</p>
+          <p>Price: {{ currentProduct.total }}</p>
           <button v-on:click="updateProduct(currentProduct)">Update</button>
           <button v-on:click="destroyProduct(currentProduct)">Destroy</button>
           <button>Close</button>
@@ -57,11 +39,7 @@
   </div>
 </template>
 
-<style>
-img {
-  width: 200px;
-}
-</style>
+
 
 <script>
 import axios from "axios"
