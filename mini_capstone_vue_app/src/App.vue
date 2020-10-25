@@ -1,38 +1,22 @@
 <template>
-  <div id="app">
+  <div id="wrapper">
   
      <header id="header">
         <div class="inner">
-
-          <!-- Logo -->
-            <a href="index.html" class="logo">
-              <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+            <a class="logo">
+              <router-link to="/">Home</router-link> |
+              <router-link to="/signup">Signup</router-link> |
+              <router-link to="/login">Login</router-link> |
+              <router-link to="/logout">Logout</router-link>
             </a>
-
-          <!-- Nav -->
-            <nav>
-              <ul>
-                <li><a href="#menu">Menu</a></li>
-              </ul>
-            </nav>
-
         </div>
       </header>
 
-    <!-- Menu -->
-      <nav id="menu">
-        <h2>Menu</h2>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="generic.html">Ipsum veroeros</a></li>
-          <li><a href="generic.html">Tempus etiam</a></li>
-          <li><a href="generic.html">Consequat dolor</a></li>
-          <li><a href="elements.html">Elements</a></li>
-        </ul>
-      </nav>
-
-
     <router-view/>
+
+
+
+
 
       <footer id="footer">
         <div class="inner">
@@ -55,22 +39,6 @@
               </ul>
             </form>
           </section>
-          <section>
-            <h2>Follow</h2>
-            <ul class="icons">
-              <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-              <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-              <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-              <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-              <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-              <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-              <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-              <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-          </section>
-          <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-          </ul>
         </div>
       </footer>
 

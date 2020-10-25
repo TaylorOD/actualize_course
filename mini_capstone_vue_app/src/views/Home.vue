@@ -1,5 +1,23 @@
 <template>
-  <div class="home">
+  <div class="home" id="main">
+        <div class="inner">
+         
+          <section class="tiles">
+            <article class="style1" v-for="product in products">
+              <span class="image">
+                <img src="images/pic01.jpg" alt="" />
+              </span>
+              <a href="generic.html">
+                <h2>{{ product.name }}</h2>
+                <div class="content">
+                  <p>{{ product.description }}</p>
+                </div>
+              </a>
+            </article>
+            
+          </section>
+      </div>
+
     <h1>Create Product</h1>
     <div>
       Name:
