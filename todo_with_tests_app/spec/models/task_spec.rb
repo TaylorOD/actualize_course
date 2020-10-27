@@ -13,9 +13,7 @@ RSpec.describe Task, type: :model do
       expect(task.complete).to eq(false)
     end
   end
-end
 
-RSpec.describe Task, type: :model do
   describe "#toggle_favorite!" do
     it "should switch favorite to true if it began as false" do
       task = Task.create(name: "Mow the lawn", description: "Use the lawnmower to mow the lawn", priority: 2, deadline: Time.now, complete: false, duration: 60, favorite: false)
@@ -28,9 +26,7 @@ RSpec.describe Task, type: :model do
       expect(task.favorite).to eq(false)
     end
   end
-end
 
-RSpec.describe Task, type: :model do
   describe "#overdue?" do
     it "it should return true is the dealine is past" do
       task = Task.create(deadline: 1.day.ago, complete: false)
@@ -42,9 +38,7 @@ RSpec.describe Task, type: :model do
       expect(task.overdue?).to eq(false)
     end
   end
-end
 
-RSpec.describe Task, type: :model do
   describe "#increment_priority!" do
     it "should increase priority by 1" do
       task = Task.create(priority: 5)
