@@ -43,3 +43,19 @@ RSpec.describe Task, type: :model do
     end
   end
 end
+
+RSpec.describe Task, type: :model do
+  describe "#increment_priority!" do
+    it "should increase priority by 1" do
+      task = Task.create(priority: 5)
+      task.increment_priority!
+      expect(task.priority).to eq(6)
+    end
+
+    it "should not increase priority past 10" do
+      task = Task.create(priority: 10)
+      task.increment_priority!
+      expect(task.priority).to eq(10)
+    end
+  end
+end
