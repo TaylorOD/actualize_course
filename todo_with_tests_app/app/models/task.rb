@@ -8,7 +8,11 @@ class Task < ApplicationRecord
   end
 
   def overdue?
-    return Time.now > deadline
+    if complete
+      return false
+    else
+      return Time.now > deadline
+    end
   end
 
   def increment_priority!

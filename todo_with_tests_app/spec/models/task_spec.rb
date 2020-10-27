@@ -29,3 +29,17 @@ RSpec.describe Task, type: :model do
     end
   end
 end
+
+RSpec.describe Task, type: :model do
+  describe "#overdue?" do
+    it "it should return true is the dealine is past" do
+      task = Task.create(deadline: 1.day.ago, complete: false)
+      expect(task.overdue?).to eq(true)
+    end
+
+    it "it should return false is the dealine has not past" do
+      task = Task.create(deadline: 1.day.from_now, complete: false)
+      expect(task.overdue?).to eq(false)
+    end
+  end
+end
