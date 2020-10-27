@@ -1,5 +1,16 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#toggle_complete!" do
+    it "should switch complete to true if it began as false" do
+      task = Task.create(name: "Mow the lawn", description: "Use the lawnmower to mow the lawn", priority: 2, deadline: Time.now, complete: false, duration: 60, favorite: false)
+      task.toggle_complete!
+      expect(task.complete).to eq(true)
+    end
+    it "should switch complete to false if it began as true" do
+      task = Task.create(name: "Mow the lawn", description: "Use the lawnmower to mow the lawn", priority: 2, deadline: Time.now, complete: true, duration: 60, favorite: false)
+      task.toggle_complete!
+      expect(task.complete).to eq(false)
+    end
+  end
 end
