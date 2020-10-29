@@ -1,5 +1,7 @@
 require "sinatra"
+require "sinatra/namespace"
 require "mongoid"
+
 
 # DB setup
 Mongoid.load! "mongoid.config"
@@ -22,6 +24,15 @@ class Book
 end
 
 # Engpoints
-get "/" do
-  "Welcome to Booklist!"
+
+namespace '/api/v1' do
+
+  before do
+    content_type 'application/json'
+  end
+
+  get '/books' do
+    Book.all.to_json
+  end
 end
+
