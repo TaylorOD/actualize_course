@@ -24,7 +24,7 @@ class Book
 
   scope :title, -> (title) { where(title: /^#{title}/) }
   scope :isbn, -> (isbn) { where(isbn: isbn) }
-  scope :author, -> (author) { where(author: author)}
+  scope :author, -> (author) { where(author: author) }
 end
 
 # Engpoints
