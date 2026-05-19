@@ -9,14 +9,14 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
+    "vue": "^3.0.0",
     "vue-router": "^3.2.0",
     "vue-simple-spinner": "^1.2.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/cli-plugin-babel": "~5.0.9",
+    "@vue/cli-plugin-router": "~5.0.9",
+    "@vue/cli-service": "~5.0.9",
+    "vue-template-compiler": "^2.7.16"
   }
 }
